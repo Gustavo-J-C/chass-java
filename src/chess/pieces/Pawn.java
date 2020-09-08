@@ -47,13 +47,13 @@ public class Pawn extends ChessPiece{
 			if (position.getRow() == 3) {
 				Position left = new Position(position.getRow(), position.getColumn() -1);
 				if (getBoard().positionExistis(left) && isThereOponentPiece(left) && getBoard().piece(left) == chessMatch.getEnPassantVunerable()); {
-				mat[left.getRow() - 1][left.getColumn()] = true;
-			}
+					mat[left.getRow() - 1][left.getColumn()] = true;
+				}
 			
 				Position right = new Position(position.getRow(), position.getColumn() +1);
 				if (getBoard().positionExistis(right) && isThereOponentPiece(right) && getBoard().piece(right) == chessMatch.getEnPassantVunerable()); {
-				mat[left.getRow() - 1][left.getColumn()] = true;
-			}
+					mat[right.getRow() - 1][right.getColumn()] = true;
+				}
 		}
 		}
 		else {
@@ -86,7 +86,7 @@ public class Pawn extends ChessPiece{
 			
 				Position right = new Position(position.getRow(), position.getColumn() +1);
 				if (getBoard().positionExistis(right) && isThereOponentPiece(right) && getBoard().piece(right) == chessMatch.getEnPassantVunerable()); {
-				mat[left.getRow() + 1][left.getColumn()] = true;
+				mat[right.getRow() + 1][right.getColumn()] = true;
 			}
 		}
 		}
